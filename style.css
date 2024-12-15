@@ -1,0 +1,165 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+h1 {
+  font-weight: 400;
+  font-style: italic;
+}
+
+ul {
+  display: flex;
+}
+
+ul li {
+  list-style: none;
+  margin: 0 10px;
+}
+
+li a {
+  text-decoration: none;
+  color: black;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 49%;
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+.card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.description {
+  padding: 100px 150px;
+}
+
+.info p {
+  margin: 0px;
+}
+
+.explain {
+  font-style: italic;
+  font-weight: 600;
+}
+.lets {
+  font-size: 50px;
+  font-style: italic;
+  color: red;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  border-radius: 20px;
+  margin: 5px;
+  opacity: 0.7;
+}
+.hamburger {
+  display: none;
+  z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .links {
+    display: none;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  .card {
+    width: 100%;
+  }
+  .description {
+    padding: 100px 50px;
+  }
+}
+
+.hamburger-line1 {
+  animation: 1s fadeBar1;
+  animation-fill-mode: forwards;
+}
+.hamburger-line2 {
+  animation: 1s fadeBar2;
+  animation-fill-mode: forwards;
+}
+.hamburger-line3 {
+  animation: 1s fadeBar3;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeBar1 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg) translate(4px, 6px);
+  }
+}
+
+@keyframes fadeBar2 {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes fadeBar3 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-45deg) translate(4px, -6px);
+  }
+}
+
+.mobilNav {
+  position: fixed;
+  top: 0;
+  right: -180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 180px;
+  height: 100vh;
+  transition: transform 1s;
+}
+
+.mobilNav a {
+  text-decoration: none;
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
+  color: black;
+}
+
+.openSideBar {
+  transform: translateX(-180px);
+}
